@@ -1,5 +1,5 @@
 #load chunk
-icd_test<- readRDS("D:/Ed_TBDC/R_proj/interactive_interface/ICD_map.RData")
+icd_test<- readRDS("/ICD_map.RData")
 
 #library pkgs
 pkg<- c("shiny", "shinytreeview", "shinyWidgets", "knitr", "kableExtra", "magrittr", "stringr", "dplyr")
