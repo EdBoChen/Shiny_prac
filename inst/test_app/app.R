@@ -1,5 +1,5 @@
 #test shiny app
-icd_tbl<- readr::read_rds("inst/test_app/testdataset.rds")
+icd_tbl<- readr::read_rds("inst/test_app/testdataset2.rda")
 ui<- fluidPage(
   sidebarLayout(
     sidebarPanel(
