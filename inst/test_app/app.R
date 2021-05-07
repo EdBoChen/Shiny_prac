@@ -1,4 +1,5 @@
 #test shiny app
+icd_tbl<- readRDS("inst/test_app/testdataset.rds")
 ui<- fluidPage(
   sidebarLayout(
     sidebarPanel(
@@ -11,13 +12,16 @@ ui<- fluidPage(
   mainPanel(
     plotOutput("distPlot")
     )
-  )
+  ),
+  fluidPage(tableOutput("tbl"))
 )
 
 server<- function(input, output) {
   output$distPlot <- renderPlot(
     hist(rnbinom(n= input$obs, size= 300, prob= 0.3))
   )
+  output$tbl<- renderTable(
+    head(icd_tbl, n= 10))
 }
 
 if (interactive()){
