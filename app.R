@@ -1,6 +1,17 @@
 #load chunk
 icd_test<- readRDS("ICD_map_app/ICD_map.RData")
 
+check_installed<- function(required_pkg) {
+  non_existent_pkg<- required_pkg[!(required_pkg%in%installed.packages()[, "Package"])]
+  if(length(non_existent_pkg)>0) { 
+    install.packages(non_existent_pkg)
+    return(paste0("Install the package ", non_existent_pkg, " for this app"))
+    }else{
+      return("All packages are installed.")
+    }
+  }
+check_installed(pkg)
+
 #library pkgs
 pkg<- c("shiny", "shinytreeview", "shinyWidgets", "knitr", "kableExtra", "magrittr", "stringr", "dplyr")
 lapply(pkg, require, character.only= T)
