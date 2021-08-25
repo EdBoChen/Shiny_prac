@@ -50,7 +50,7 @@ ui <- fluidPage(
                                               tableOutput("icd9_diff_tbl"))
                                      )
                               ),
-                              column(6, tags$h4("ICD-10 code for selected cause outline"),
+                              column(6, tags$h4("ICD-9 code for selected cause outline"),
                                      tags$h6("Same ICD descriptions"),
                                      tableOutput("icd10_same_tbl"),
                                      fixedRow(
