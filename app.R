@@ -50,14 +50,6 @@ ui <- fluidPage(
                                               tableOutput("icd9_diff_tbl"))
                                      )
                               ),
-                              column(6, tags$h4("ICD-10 code for selected cause outline"),
-                                     tags$h6("Same ICD descriptions"),
-                                     tableOutput("icd10_same_tbl"),
-                                     fixedRow(
-                                       column(12,
-                                              tags$h6("Different ICD descriptions"),
-                                              tableOutput("icd10_diff_tbl"))
-                                     ))),
                      #inquiry
                      tabPanel("Input searching (only for ICD code)",
                               br(),
