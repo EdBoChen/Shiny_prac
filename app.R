@@ -14,7 +14,8 @@ pkg<- c("shiny", "shinytreeview", "shinyWidgets", "knitr", "kableExtra", "magrit
 check_installed_require(pkg)
 }
 #Define the order of the tree
-treeorder<- unique(rbind(icd_test$icd9[,1:4],icd_test$icd10[,1:4]))%>%
+treeorder<- unique(rbind(icd_test$icd9[,1:4],icd_test$icd10[,1:4],
+  icd_test_1$icd9[,1:4],icd_test_2$icd9[,1:4]))%>%
   arrange(cause_lv4, cause_lv3, cause_lv2, cause_lv1)
 
 ####
