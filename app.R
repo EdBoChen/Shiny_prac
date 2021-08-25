@@ -1,6 +1,7 @@
 #load chunk
 icd_test<- readRDS("ICD_map_app/ICD_map.RData")
 
+if(F){
 check_installed_require<- function(required_pkg) {
   non_existent_pkg<- required_pkg[!(required_pkg%in%installed.packages()[, "Package"])]
   if(length(non_existent_pkg)>0) { 
@@ -11,7 +12,7 @@ check_installed_require<- function(required_pkg) {
 #library pkgs
 pkg<- c("shiny", "shinytreeview", "shinyWidgets", "knitr", "kableExtra", "magrittr", "stringr", "dplyr")
 check_installed_require(pkg)
-
+}
 #Define the order of the tree
 treeorder<- unique(rbind(icd_test$icd9[,1:4],icd_test$icd10[,1:4]))%>%
   arrange(cause_lv4, cause_lv3, cause_lv2, cause_lv1)
