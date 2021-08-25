@@ -1,13 +1,11 @@
 #load chunk
 icd_test<- readRDS("ICD_map_app/ICD_map.RData")
 
-if(F){
 check_installed_require<- function(required_pkg) {
   non_existent_pkg<- required_pkg[!(required_pkg%in%installed.packages()[, "Package"])]
   if(length(non_existent_pkg)>0) { 
     install.packages(non_existent_pkg)}
   lapply(required_pkg, require, character.only= T)
-  }
 
 #library pkgs
 pkg<- c("shiny", "shinytreeview", "shinyWidgets", "knitr", "kableExtra", "magrittr", "stringr", "dplyr")
@@ -168,5 +166,4 @@ server <- function(input, output) {
   }
 }
 
-if (interactive())
-  shinyApp(ui, server)
+shinyApp(ui, server)
